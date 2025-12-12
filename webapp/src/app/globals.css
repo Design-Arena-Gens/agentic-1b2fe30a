@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background:
+      radial-gradient(120% 120% at 10% 10%, rgba(52, 211, 153, 0.18), transparent),
+      radial-gradient(110% 110% at 90% 5%, rgba(125, 211, 252, 0.2), transparent),
+      radial-gradient(110% 110% at 50% 90%, rgba(250, 204, 21, 0.12), transparent),
+      linear-gradient(180deg, #020617 0%, #04091a 35%, #040314 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.12' cx='10' cy='10' r='3' fill='%23ffffff'/%3E%3Ccircle opacity='0.08' cx='80' cy='50' r='2' fill='%23ffffff'/%3E%3Ccircle opacity='0.14' cx='55' cy='100' r='2' fill='%23ffffff'/%3E%3Ccircle opacity='0.1' cx='100' cy='30' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
